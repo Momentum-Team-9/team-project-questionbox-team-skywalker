@@ -2,7 +2,7 @@ import { QuestionList } from './components/QuestionList.js';
 function App() {
   return (
     <div className="App">
-      <QuestionList />
+      < QuestionList />
     </div>
   );
 }

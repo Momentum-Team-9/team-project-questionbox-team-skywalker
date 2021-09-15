@@ -1,7 +1,7 @@
 export const questions = [
   {
     id: 1,
-    title: 'Deep question?',
+    title: 'Deep question 1?',
     body: 'Why is the sky blue?',
     created_at: '9/15/2021, 11:54:05 AM',
     owner: 'Kermit',
@@ -10,7 +10,7 @@ export const questions = [
   },
   {
     id: 2,
-    title: 'Deep question?',
+    title: 'Deep question 2?',
     body: 'Which came first, the chicken or the egg?',
     created_at: '9/15/2021, 11:54:05 AM',
     owner: 'Miss Piggy',
