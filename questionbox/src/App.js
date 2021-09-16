@@ -14,10 +14,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header token={auth} />
         <Switch>
           <Route path="/questions" component={QuestionList} />
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
+          <Route exact path="/" component={QuestionList} />
           <Route path="/profile" component={() => <Profile token={auth} />} />
         </Switch>
       </div>

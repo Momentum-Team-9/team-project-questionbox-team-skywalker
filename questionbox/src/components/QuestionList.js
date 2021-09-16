@@ -4,25 +4,28 @@ import axios from 'axios';
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState([]);
-  const [selectedQuestion, setSelectedQuestion] = useState (null)
-  
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+
   useEffect(() => {
-    axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`).then((response) => {
-        setQuestions(response.data)
-    });
-}, [questions]);
+    axios
+      .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
+      .then((response) => {
+        setQuestions(response.data);
+      });
+  }, [questions]);
+
 
   return (
     <>
-    <div className="questions">
+      <div className="questions">
         <h2>questions</h2>
-            {questions.map((question) => (
-              <div className="questionCard">
-                key={question.pk}
-                <p>{question.title}</p>
+        {questions.map((question) => (
+          <div className="questionCard">
+            key={question.pk}
+            <p>{question.title}</p>
           </div>
-            ))}
-    </div>
+        ))}
+      </div>
     </>
-);
+  );
 };
