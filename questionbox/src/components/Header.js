@@ -11,9 +11,9 @@ export function Header() {
         <Link to="/login">
           <li>Login</li>
         </Link>
-        {/* <Link to="/profile">
+        <Link to="/profile">
           <li>Profile</li>
-        </Link> */}
+        </Link>
       </ul>
     </nav>
   );
