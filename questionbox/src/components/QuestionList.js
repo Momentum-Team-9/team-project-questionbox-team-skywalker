@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import axios from 'axios';
 // import { Question } from './Question'
 
