@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
 import axios from 'axios';
 // import { Question } from './Question'
 
@@ -8,7 +7,7 @@ export const QuestionList = () => {
   const [selectedQuestion, setSelectedQuestion] = useState (null)
   
   useEffect(() => {
-    axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions`).then((response) => {
+    axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`).then((response) => {
         setQuestions(response.data)
     });
 }, [questions]);
