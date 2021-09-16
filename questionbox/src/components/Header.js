@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-export function Header({ token }) {
+export function Header({ token, setAuth, clearStorage }) {
   return (
     <nav>
       <ul className="nav-links">
@@ -12,9 +12,9 @@ export function Header({ token }) {
             <Link to="/profile">
               <li>Profile</li>
             </Link>
-            <Link to="/logout">
+            <a onClick={() => clearStorage('token')}>
               <li>Logout</li>
-            </Link>
+            </a>
           </>
         ) : (
           <>
