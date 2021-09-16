@@ -1,0 +1,17 @@
+.questions {
+  margin: 1em;
+  background-color: linen;
+}
+.questions h1 {
+  text-align: center;
+}
+
+.questionCard {
+  margin: 2em;
+  border-style: outset;
+  background-color: white;
+}
+
+.questionCard h2 {
+  color: darkgreen;
+}
