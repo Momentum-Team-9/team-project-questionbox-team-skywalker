@@ -1,19 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-export function Header() {
+export function Header({ token }) {
   return (
     <nav>
-      <h3>GreenThumb</h3>
       <ul className="nav-links">
         <Link to="/questions">
-          <li>QuestionList</li>
+          <h3>GreenThumb</h3>
         </Link>
-        <Link to="/login">
-          <li>Login</li>
-        </Link>
-        <Link to="/profile">
-          <li>Profile</li>
-        </Link>
+        {token ? (
+          <>
+            <Link to="/profile">
+              <li>Profile</li>
+            </Link>
+            <Link to="/logout">
+              <li>Logout</li>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <li>Login</li>
+            </Link>
+            <Link to="/register">
+              <li>Register</li>
+            </Link>
+          </>
+        )}
       </ul>
     </nav>
   );
