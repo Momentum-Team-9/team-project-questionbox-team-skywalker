@@ -6,13 +6,16 @@ import '../css/questions.css';
 
 export const QuestionList = () => {
   const [questions, setQuestions] = useState([]);
-  const [selectedQuestion, setSelectedQuestion] = useState (null)
-  
+  const [selectedQuestion, setSelectedQuestion] = useState(null);
+
   useEffect(() => {
-    axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`).then((response) => {
-        setQuestions(response.data)
-    });
-}, [questions]);
+    axios
+      .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
+      .then((response) => {
+        setQuestions(response.data);
+      });
+  }, [questions]);
+
 
   return (
     <>
@@ -28,9 +31,10 @@ export const QuestionList = () => {
                   {/* <p>Asked: {question.created_at}</p> */}
                   <button onClick={() =>(setSelectedQuestion (question.pk))}>View {question.answer_count.id__count} answers</button>
                 </div>
+
           </div>
-            ))}
-    </div>
+        ))}
+      </div>
     </>
-);
+  );
 };
