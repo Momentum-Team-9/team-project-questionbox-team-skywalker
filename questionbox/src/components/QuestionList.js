@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-import { questions as questionList } from '../data.js';
+<<<<<<< HEAD
+import axios from 'axios';
+// import { Question } from './Question'
 
 export const QuestionList = () => {
-  const [questions, setQuestions] = useState(questionList);
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
-  console.log(questions);
-
-  //   useEffect(() => {
-  //     axios.get(`https://questionbox-team-skywalker.herokuapp.com/questions`).then((response) => {
-  //         setQuestions(response.data.questions)
-  //     });
-  // }, []);
+  const [questions, setQuestions] = useState([]);
+  const [selectedQuestion, setSelectedQuestion] = useState (null)
+  
+  useEffect(() => {
+    axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions`).then((response) => {
+        setQuestions(response.data)
+    });
+}, [questions]);
 
   return (
+    <>
     <div className="questions">
-      <h2>Questions</h2>
-      <div>
-        {questions.map((question) => {
-          console.log(question);
-          return (
-            <button
-              onClick={() => setSelectedQuestion(question.id)}
-              key={question.id}
-            >
-              {question.title}
-            </button>
-          );
-        })}
-      </div>
-      {/* <div>
-            <Question id={selectedQuestion} />
-          </div> */}
+        <h2>questions</h2>
+            {questions.map((question) => (
+              <div className="questionCard">
+                key={question.pk}
+                <p>{question.title}</p>
+          </div>
+            ))}
     </div>
-  );
+    </>
+);
 };
