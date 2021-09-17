@@ -38,10 +38,9 @@ export const Login = ({ setAuth }) => {
   };
 
   return (
-    <>
-      <div className="logo">
-        <p className="has-text-primary has-text-centered">Login</p>
-        <i className="fas fa-paw" />
+    <div className="loginContainer">
+      <div className="titleContainer">
+        <p className="title">Login</p>
       </div>
 
       {errors && <p>{errors}</p>}
@@ -66,6 +65,6 @@ export const Login = ({ setAuth }) => {
           <button type="submit">Login</button>
         </div>
       </form>
-    </>
+    </div>
   );
 };

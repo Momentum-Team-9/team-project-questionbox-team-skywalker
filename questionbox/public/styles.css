@@ -5,6 +5,20 @@
 }
 .formContainer {
   width: 60vw;
+  padding-top: 100px;
+}
+.regContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 100px;
 }
 nav {
   display: flex;
@@ -36,12 +50,6 @@ button:active {
   border-radius: 4px;
 }
 
-.regContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 input[type='password'] {
   width: 100%;
   padding: 12px 20px;
@@ -56,6 +64,11 @@ input[type='text'] {
 }
 
 #form-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.titleContainer {
   display: flex;
   justify-content: center;
 }
