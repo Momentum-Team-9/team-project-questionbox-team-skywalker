@@ -9,19 +9,24 @@ export const QuestionList = ( {token} ) => {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   console.log(token)
   useEffect(() => {
+    if (token) {
     axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `token ${token}`
       }
     }).then((res) => setQuestions(res.data))
+    }
+    axios.get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
+    .then((res) => setQuestions(res.data))
+
   }, [token])
   console.log(questions)
 
   return (
     <>
     <div className="questions">
-      Add a Question: {token && <QuestionForm token={token} />}
+      {token && <QuestionForm token={token} />}
         <h1>Seeds of Knowledge</h1>
         {questions && questions.map((question, index) => (
               <div className="questionCard" key={index}>
