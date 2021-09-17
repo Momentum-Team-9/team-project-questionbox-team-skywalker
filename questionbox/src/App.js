@@ -23,6 +23,7 @@ function App() {
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
           <Route exact path="/" component={QuestionList} />
           <Route path="/profile" component={() => <Profile token={auth} />} />
+          <Route exact path="/logout" component={QuestionList} />
         </Switch>
       </div>
     </Router>

@@ -11,19 +11,15 @@ export const Registration = ({ setAuth }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('https://questionbox-team-skywalker.herokuapp.com/auth/users/', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Disposition': 'attachement; filename=null',
-      },
-      body: {
-        username: username,
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        password: password,
-      },
-    });
+    axios
+      .post('https://questionbox-team-skywalker.herokuapp.com/auth/users/', {
+        username,
+        first_name,
+        last_name,
+        email,
+        password,
+      })
+      .then((res) => console.log(res));
   };
 
   const handleChange = (inputType, event) => {
