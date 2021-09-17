@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 export function Header({ token, setAuth, clearStorage }) {
   return (
     <nav>
