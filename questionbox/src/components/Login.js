@@ -58,13 +58,12 @@ export const Login = ({ setAuth }) => {
         <input
           className="input"
           type="password"
+          placeholder="password"
           value={password}
           onChange={(e) => handleChange('password', e)}
         />
         <div id="form-buttons">
-          <button className="button is-primary" type="submit">
-            Login
-          </button>
+          <button type="submit">Login</button>
         </div>
       </form>
     </>

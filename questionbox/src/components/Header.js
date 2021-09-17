@@ -7,22 +7,25 @@ export function Header({ token, setAuth, clearStorage }) {
         <Link to="/questions">
           <h3>GreenThumb</h3>
         </Link>
+
         {token ? (
           <>
             <Link to="/profile">
-              <li>Profile</li>
+              <button>Profile</button>
             </Link>
+
             <a onClick={() => clearStorage('token')}>
-              <li>Logout</li>
+              <button>Logout</button>
             </a>
           </>
         ) : (
           <>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
             <Link to="/register">
-              <li>Register</li>
+              <button>Register</button>
+            </Link>
+
+            <Link to="/login">
+              <button>Login</button>
             </Link>
           </>
         )}

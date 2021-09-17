@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { QuestionList } from './components/QuestionList.js';
 import { Login } from './components/Login.js';
+import { Registration } from './components/Registration';
 import { Header } from './components/Header.js';
 import { Profile } from './components/Profile.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -18,6 +19,7 @@ function App() {
         <Header token={auth} setAuth={setAuth} clearStorage={removeItem} />
         <Switch>
           <Route path="/questions" component={QuestionList} />
+          <Route path="/register" component={Registration} />
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
           <Route exact path="/" component={QuestionList} />
           <Route path="/profile" component={() => <Profile token={auth} />} />
