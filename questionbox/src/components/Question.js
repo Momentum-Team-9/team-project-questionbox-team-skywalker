@@ -19,7 +19,7 @@ export const Question = ({ token, props }) => {
       .then((response) => {
         setQuestion(response.data);
       });
-  }, [question, props, token]);
+  }, [props, token]);
 
   return (
     <>
