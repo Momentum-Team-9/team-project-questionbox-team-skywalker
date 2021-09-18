@@ -1,20 +1,15 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { QuestionList } from './QuestionList'
+import React from 'react';
 
-// export const Question = ({questions}) => {
-//     const [selectedQuestion, setSelectedQuestion] = useState (null)
+export const Question = ({ id }) => {
+  return (
+    <p>question details</p>
+    // <div className="questionCard">
+    //     <div className="qustionCardBody">
+    //         <h2>{question.title}</h2>
+    //         <p>Asked by: {question.owner} on {question.created_at}</p>
+    //          {question.answers}
+    //     </div>
 
-//     return (
-//         <div className="questions">
-//             <h2>Questions</h2>
-//             <div>
-//                 {questions.map((question) => (
-//                     <button onClick={() => (setSelectedQuestion (question.pk))}
-//                     key={question.pk}>{question.title}
-//                     </button>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// }
+    // </div>
+  );
+};
