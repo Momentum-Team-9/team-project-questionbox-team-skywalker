@@ -14,7 +14,7 @@ export const Profile = ({ token }) => {
       .then((response) => {
         setProfile(response.data);
       });
-  }, [profile, token]);
+  }, [token]);
 
   return (
     <>
