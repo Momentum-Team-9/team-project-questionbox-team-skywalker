@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export const Profile = ({ token }) => {
+  const [profile, setProfile] = useState([]);
   useEffect(() => {
     axios
       .get('https://questionbox-team-skywalker.herokuapp.com/auth/users/me/', {
@@ -10,7 +11,15 @@ export const Profile = ({ token }) => {
           Authorization: `token ${token}`,
         },
       })
-      .then((response) => console.log(response.data));
-  });
-  return <h1>Profile!</h1>;
+      .then((response) => {
+        setProfile(response.data);
+      });
+  }, [profile, token]);
+
+  return (
+    <>
+      <h1>Profile</h1>
+      <p>{profile.username}</p>
+    </>
+  );
 };
