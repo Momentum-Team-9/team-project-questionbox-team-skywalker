@@ -1,15 +1,31 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-export const Question = ({ id }) => {
+export const Question = ({ token, props }) => {
+  const [question, setQuestion] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(
+        'https://questionbox-team-skywalker.herokuapp.com/api/questions/' +
+          props,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `token ${token}`,
+          },
+        }
+      )
+      .then((response) => {
+        setQuestion(response.data);
+      });
+  }, [question, props, token]);
+
   return (
-    <p>question details</p>
-    // <div className="questionCard">
-    //     <div className="qustionCardBody">
-    //         <h2>{question.title}</h2>
-    //         <p>Asked by: {question.owner} on {question.created_at}</p>
-    //          {question.answers}
-    //     </div>
-
-    // </div>
+    <>
+      <h1>Question Detail</h1>
+      <p>{question.pk}</p>
+      <p>{question.title}</p>
+    </>
   );
 };
