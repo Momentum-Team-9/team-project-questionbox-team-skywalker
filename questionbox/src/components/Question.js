@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { AnswerForm } from './AnswerForm';
 
 export const Question = ({ token, props }) => {
   const [question, setQuestion] = useState({});
@@ -26,6 +27,9 @@ export const Question = ({ token, props }) => {
   return (
     <>
       <div className="questionDetails">
+        <div>
+        <AnswerForm token={token} />
+        </div>
         <div className="questionCard">
           <h2>{question.title}</h2>
           <p>{question.body}</p>
