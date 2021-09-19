@@ -8,6 +8,7 @@ export const Registration = ({ setAuth }) => {
   const [last_name, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [re_password, setRe_Password] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,6 +19,7 @@ export const Registration = ({ setAuth }) => {
         last_name,
         email,
         password,
+        re_password,
       })
       .then((res) => console.log(res));
   };
@@ -37,6 +39,9 @@ export const Registration = ({ setAuth }) => {
     }
     if (inputType === 'password') {
       setPassword(event.target.value);
+    }
+    if (inputType === 're_password') {
+      setRe_Password(event.target.value);
     }
   };
 
@@ -77,6 +82,12 @@ export const Registration = ({ setAuth }) => {
           type="password"
           value={password}
           onChange={(e) => handleChange('password', e)}
+        />
+        <input
+          placeholder="re-enter password"
+          type="password"
+          value={re_password}
+          onChange={(e) => handleChange('re_password', e)}
         />
         <div id="form-buttons">
           <button type="submit">Sign Up</button>
