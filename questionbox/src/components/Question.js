@@ -25,13 +25,17 @@ export const Question = ({ token, props }) => {
 
   return (
     <>
-      <h1>Question Detail</h1>
-      <p>{question.pk}</p>
-      <p>{question.title}</p>
-      <p>{question.body}</p>
-      {answers.map((answer) => (
-        <p>{String(answer.body)}</p>
-      ))}
+      <div className="questionDetails">
+        <div className="questionCard">
+          <h2>{question.title}</h2>
+          <p>{question.body}</p>
+        </div>
+        <div className="questionCard">
+          {answers.map((answer) => (
+            <p>{String(answer.body)}</p>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

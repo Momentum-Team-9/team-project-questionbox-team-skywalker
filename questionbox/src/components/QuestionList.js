@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QuestionForm } from './QuestionForm';
-import '../css/questions.css';
+
 import { Question } from './Question';
 import { Link } from 'react-router-dom';
 

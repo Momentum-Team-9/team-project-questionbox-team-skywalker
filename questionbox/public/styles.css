@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
 .formContainer {
   width: 60vw;
   padding-top: 100px;
@@ -71,4 +72,26 @@ input[type='text'] {
 .titleContainer {
   display: flex;
   justify-content: center;
+}
+.questions {
+  padding: 1em;
+  background-color: linen;
+}
+.questions h1 {
+  text-align: center;
+}
+
+.questionCard {
+  margin: 2em;
+  border-style: outset;
+  background-color: white;
+}
+
+.questionCard h2 {
+  color: darkgreen;
+}
+.questionDetails {
+  padding: 1em;
+  background-color: linen;
+  height: 100%;
 }
