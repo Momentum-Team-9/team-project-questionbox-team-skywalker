@@ -3,10 +3,11 @@ import axios from 'axios';
 
 export const Question = ({ token, props }) => {
   const [question, setQuestion] = useState({});
-  console.log(props);
+  const [answers, setAnswers] = useState([]);
+
   useEffect(() => {
-    axios
-      .get(
+    async function getQuestion() {
+      const response = await axios.get(
         'https://questionbox-team-skywalker.herokuapp.com/api/questions/' +
           props.match.params.pk,
         {
@@ -15,10 +16,11 @@ export const Question = ({ token, props }) => {
             Authorization: `token ${token}`,
           },
         }
-      )
-      .then((response) => {
-        setQuestion(response.data);
-      });
+      );
+      setQuestion(response.data);
+      setAnswers(response.data.answers);
+    }
+    getQuestion();
   }, [props, token]);
 
   return (
@@ -26,6 +28,10 @@ export const Question = ({ token, props }) => {
       <h1>Question Detail</h1>
       <p>{question.pk}</p>
       <p>{question.title}</p>
+      <p>{question.body}</p>
+      {answers.map((answer) => (
+        <p>{String(answer.body)}</p>
+      ))}
     </>
   );
 };
