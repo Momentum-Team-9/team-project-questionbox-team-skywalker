@@ -3,7 +3,10 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+html {
+  height: 100%;
+  background-color: linen;
+}
 .formContainer {
   width: 60vw;
   padding-top: 100px;
@@ -102,4 +105,14 @@ input[type='text'] {
   padding: 1em;
   background-color: linen;
   height: 100%;
+}
+.questionCardFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.answerLink,
+.askedBy {
+  margin: 10px;
 }
