@@ -3,6 +3,10 @@
   padding: 0px;
   box-sizing: border-box;
 }
+html {
+  height: 100%;
+  background-color: linen;
+}
 .formContainer {
   width: 60vw;
   padding-top: 100px;
@@ -71,4 +75,44 @@ input[type='text'] {
 .titleContainer {
   display: flex;
   justify-content: center;
+}
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  background-color: linen;
+}
+.questions h1 {
+  text-align: center;
+}
+
+.questionCard {
+  margin: 10px;
+  border-style: outset;
+  background-color: white;
+  width: 70vw;
+}
+
+.questionCard h2 {
+  color: darkgreen;
+  padding: 10px;
+}
+.questionTitle {
+  color: darkgreen;
+}
+.questionDetails {
+  padding: 1em;
+  background-color: linen;
+  height: 100%;
+}
+.questionCardFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.answerLink,
+.askedBy {
+  margin: 10px;
 }
