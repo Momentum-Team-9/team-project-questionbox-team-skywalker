@@ -34,23 +34,25 @@ export const QuestionList = ({ token }) => {
     <>
       <div className="questions">
         {token && <QuestionForm token={token} />}
-        <h1>Seeds of Knowledge</h1>
+        <h1 className="questionTitle">Seeds of Knowledge</h1>
         {questions &&
           questions.map((question, index) => (
             <div className="questionCard" key={index}>
               <div className="qustionCardBody">
                 <h2>{question.title}</h2>
-                <p>
-                  Asked by: {question.owner} on {question.created_at}
-                </p>
-              </div>
-              <div className="questionCardFooter">
-                <Link
-                  to={urls[index]}
-                  onClick={() => setSelectedQuestion(question.pk)}
-                >
-                  View {question.answer_count.id__count} answers
-                </Link>
+                <div className="questionCardFooter">
+                  <p className="askedBy">
+                    Asked by: {question.owner} on {question.created_at}
+                  </p>
+                </div>
+                <div className="answerLink">
+                  <Link
+                    to={urls[index]}
+                    onClick={() => setSelectedQuestion(question.pk)}
+                  >
+                    View {question.answer_count.id__count} answers
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
