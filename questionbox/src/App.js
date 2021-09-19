@@ -1,4 +1,5 @@
 import { QuestionList } from './components/QuestionList.js';
+import { Question } from './components/Question.js';
 import { Login } from './components/Login.js';
 import { Registration } from './components/Registration';
 import { Header } from './components/Header.js';
@@ -22,6 +23,10 @@ function App() {
           <Route
             path="/questions"
             component={() => <QuestionList token={auth} />}
+          />
+          <Route
+            path="/question/:pk"
+            component={(pk) => <Question props={pk} token={auth} />}
           />
           <Route path="/register" component={Registration} />
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
