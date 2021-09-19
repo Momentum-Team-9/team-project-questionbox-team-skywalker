@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { AnswerForm } from './AnswerForm';
 
 export const Question = ({ token, props }) => {
   const [question, setQuestion] = useState({});
@@ -26,12 +27,16 @@ export const Question = ({ token, props }) => {
   return (
     <>
       <h1>Question Detail</h1>
+      <div>
+        <AnswerForm token={token} />
+      </div>
       <p>{question.pk}</p>
       <p>{question.title}</p>
       <p>{question.body}</p>
       {answers.map((answer) => (
         <p>{String(answer.body)}</p>
       ))}
+      
     </>
   );
 };
