@@ -3,12 +3,12 @@ import axios from 'axios';
 
 export const Question = ({ token, props }) => {
   const [question, setQuestion] = useState({});
-
+  console.log(props);
   useEffect(() => {
     axios
       .get(
         'https://questionbox-team-skywalker.herokuapp.com/api/questions/' +
-          props,
+          props.match.params.pk,
         {
           headers: {
             'Content-Type': 'application/json',

@@ -3,11 +3,12 @@ import axios from 'axios';
 import { QuestionForm } from './QuestionForm';
 import '../css/questions.css';
 import { Question } from './Question';
+import { Link } from 'react-router-dom';
 
 export const QuestionList = ({ token }) => {
   const [questions, setQuestions] = useState([]);
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
-  console.log(token);
+  const [selectedQuestion, setSelectedQuestion] = useState();
+
   useEffect(() => {
     if (token) {
       axios
@@ -21,12 +22,13 @@ export const QuestionList = ({ token }) => {
           }
         )
         .then((res) => setQuestions(res.data));
+    } else {
+      axios
+        .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
+        .then((res) => setQuestions(res.data));
     }
-    axios
-      .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
-      .then((res) => setQuestions(res.data));
   }, [token]);
-  console.log(questions);
+  const urls = questions.map((question) => '/question/' + question.pk);
 
   return (
     <>
@@ -43,16 +45,19 @@ export const QuestionList = ({ token }) => {
                 </p>
               </div>
               <div className="questionCardFooter">
-                <button onClick={() => setSelectedQuestion(question.pk)}>
+                <Link
+                  to={urls[index]}
+                  onClick={() => setSelectedQuestion(question.pk)}
+                >
                   View {question.answer_count.id__count} answers
-                </button>
+                </Link>
               </div>
             </div>
           ))}
       </div>
-      <div>
+      {/* <div>
         <Question props={selectedQuestion} token={token} />
-      </div>
+      </div> */}
     </>
   );
 };
