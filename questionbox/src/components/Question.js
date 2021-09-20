@@ -1,45 +1,37 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { AnswerForm } from './AnswerForm';
+import { Link } from 'react-router-dom'
+import {useEffect} from 'react'
+import axios from 'axios'
 
-export const Question = ({ token, props }) => {
-  const [question, setQuestion] = useState({});
-  const [answers, setAnswers] = useState([]);
+export const Question = ({question, username, token, setSubmitted}) => {
 
-  useEffect(() => {
-    async function getQuestion() {
-      const response = await axios.get(
-        'https://questionbox-team-skywalker.herokuapp.com/api/questions/' +
-          props.match.params.pk,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `token ${token}`,
-          },
-        }
-      );
-      setQuestion(response.data);
-      setAnswers(response.data.answers);
-    }
-    getQuestion();
-  }, [props, token]);
-
-  return (
-    <>
-      <div className="questionDetails">
-        <div>
-        <AnswerForm token={token} />
-        </div>
-        <div className="questionCard">
+  const handleDelete = (event) => {
+    const id = event.target.id
+    return axios.delete(`https://questionbox-team-skywalker.herokuapp.com/api/questions/${question.pk}`, {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    })
+    .then((res) => {setSubmitted(true)})
+  }
+    return (
+        <div className="questionCard" key={question.pk}>
+        <div className="qustionCardBody">
           <h2>{question.title}</h2>
-          <p>{question.body}</p>
-        </div>
-        <div className="questionCard">
-          {answers.map((answer) => (
-            <p>{String(answer.body)}</p>
-          ))}
+          <div className="questionCardFooter">
+            <div className="answerLink">
+              <Link
+                to={`/question/${question.pk}`}
+              >
+                View {question.answer_count.id__count} answers
+              </Link>
+            </div>
+            <p className="askedBy">
+              Asked by: {question.owner} on {question.created_at}
+            </p> 
+            {username === question.owner ? <button  id={question.pk} onClick={(e) => handleDelete(e)}>Delete</button> :
+            <button disabled>Delete</button>}
+          </div>
         </div>
       </div>
-    </>
-  );
-};
+    )
+}

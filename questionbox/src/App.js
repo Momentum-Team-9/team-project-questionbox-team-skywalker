@@ -5,6 +5,7 @@ import { Registration } from './components/Registration';
 import { Header } from './components/Header.js';
 import { Profile } from './components/Profile.js';
 import { AnswerForm } from './components/AnswerForm.js';
+import { QuestionDetail } from './components/QuestionDetail'
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import useLocalStorageState from 'use-local-storage-state';
@@ -27,7 +28,6 @@ function App() {
       })
       .then((response) => {
         setUser(response.data);
-        console.log(response.data);
         setUsername(response.data[0].username);
       });
     }
@@ -44,13 +44,13 @@ function App() {
           />
           <Route
             path="/question/:pk"
-            component={(pk) => <Question props={pk} token={auth} />}
+            component={(pk) => <QuestionDetail props={pk} token={auth} />}
           />
           <Route path="/register" component={Registration} />
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
           <Route exact path="/" component={QuestionList} />
           <Route path="/profile" component={() => <Profile token={auth} user={user} /> } />
-          <Route exact path="/logout" component={QuestionList} />
+          <Route exact path="/logout" component={() => <QuestionList />} />
           <Route path="answers/new" component={() => <AnswerForm token={auth} />} />
         </Switch>
       </div>
