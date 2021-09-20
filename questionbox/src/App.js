@@ -32,9 +32,13 @@ function App() {
           <Route path="/register" component={Registration} />
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
           <Route exact path="/" component={QuestionList} />
+
           <Route path="/profile" component={() => <Profile token={auth} />} />
           <Route exact path="/logout" component={QuestionList} />
-          <Route path="answers/new" component={() => <AnswerForm token={auth} />} />
+          <Route
+            path="answers/new"
+            component={() => <AnswerForm token={auth} />}
+          />
         </Switch>
       </div>
     </Router>

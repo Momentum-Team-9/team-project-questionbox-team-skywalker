@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 export const Login = ({ setAuth }) => {
@@ -22,7 +22,7 @@ export const Login = ({ setAuth }) => {
         console.log(res);
         if (res.data.auth_token) {
           setAuth(res.data.auth_token);
-          history.push('/');
+          history.push('/questions');
         }
         setErrors('Incorrect credentials provided');
       });
