@@ -46,7 +46,10 @@ function App() {
             path="/question/:pk"
             component={(pk) => <QuestionDetail props={pk} token={auth} />}
           />
-          <Route path="/register" component={Registration} />
+          <Route
+            path="/register"
+            component={() => <Registration setAuth={setAuth} />}
+          />
           <Route path="/login" component={() => <Login setAuth={setAuth} />} />
           <Route exact path="/" component={QuestionList} />
           <Route path="/profile" component={() => <Profile token={auth} user={user} /> } />

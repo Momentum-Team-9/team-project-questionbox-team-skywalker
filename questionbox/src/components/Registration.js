@@ -8,7 +8,8 @@ export const Registration = ({ setAuth }) => {
   const [last_name, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [re_password, setRe_Password] = useState('')
+  const [re_password, setRe_Password] = useState('');
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,7 +22,22 @@ export const Registration = ({ setAuth }) => {
         password,
         re_password,
       })
-      .then((res) => console.log(res));
+      .then((res) => {
+        return axios
+          .post(
+            'https://questionbox-team-skywalker.herokuapp.com/auth/token/login/',
+            {
+              username: username,
+              password: password,
+            }
+          )
+          .then((data) => {
+            if (data && data.data.auth_token) {
+              setAuth(data.data.auth_token);
+              history.push('/questions');
+            }
+          });
+      });
   };
 
   const handleChange = (inputType, event) => {

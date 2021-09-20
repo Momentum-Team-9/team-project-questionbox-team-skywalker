@@ -22,7 +22,7 @@ export const Login = ({ setAuth }) => {
         console.log(res);
         if (res.data.auth_token) {
           setAuth(res.data.auth_token);
-          history.push('/');
+          history.push('/questions');
         }
         setErrors('Incorrect credentials provided');
       });
