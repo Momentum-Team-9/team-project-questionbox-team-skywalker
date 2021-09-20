@@ -23,11 +23,20 @@ export const Registration = ({ setAuth }) => {
         re_password,
       })
       .then((res) => {
-        console.log(res);
-        if (res.data.auth_token) {
-          setAuth(res.data.auth_token);
-          history.push('/questions');
-        }
+        return axios
+          .post(
+            'https://questionbox-team-skywalker.herokuapp.com/auth/token/login/',
+            {
+              username: username,
+              password: password,
+            }
+          )
+          .then((data) => {
+            if (data && data.data.auth_token) {
+              setAuth(data.data.auth_token);
+              history.push('/questions');
+            }
+          });
       });
   };
 
