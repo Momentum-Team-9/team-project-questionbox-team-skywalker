@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QuestionForm } from './QuestionForm';
-
-import { Question } from './Question';
 import { Link } from 'react-router-dom';
 
-export const QuestionList = ({ token }) => {
+export const QuestionList = ({ token, username}) => {
   const [questions, setQuestions] = useState([]);
   const [selectedQuestion, setSelectedQuestion] = useState();
+  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
-    if (token) {
+    if (token || submitted) {
       axios
         .get(
           `https://questionbox-team-skywalker.herokuapp.com/api/questions/`,
@@ -27,9 +26,18 @@ export const QuestionList = ({ token }) => {
         .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
         .then((res) => setQuestions(res.data));
     }
-  }, [token]);
+  }, [token, submitted]);
   const urls = questions.map((question) => '/question/' + question.pk);
 
+  const handleDelete = (event) => {
+    const id = event.target.id
+    return axios.delete(`https://questionbox-team-skywalker.herokuapp.com/api/questions/${id}`, {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    })
+    .then((res) => setSubmitted(true))
+  }
   return (
     <>
       <div className="questions">
@@ -51,15 +59,14 @@ export const QuestionList = ({ token }) => {
                   </div>
                   <p className="askedBy">
                     Asked by: {question.owner} on {question.created_at}
-                  </p>
+                  </p> 
+                  {username === question.owner ? <button  id={question.pk} onClick={(e) => handleDelete(e)}>Delete</button> :
+                  <button disabled>Delete</button>}
                 </div>
               </div>
             </div>
           ))}
       </div>
-      {/* <div>
-        <Question props={selectedQuestion} token={token} />
-      </div> */}
     </>
   );
 };
