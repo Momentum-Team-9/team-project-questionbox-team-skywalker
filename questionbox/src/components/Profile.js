@@ -1,25 +1,21 @@
 import { useEffect, useState } from 'react';
+import {Question} from './Question'
 import axios from 'axios';
 
-export const Profile = ({ token }) => {
+export const Profile = ({ token, user, setSelectedQuestion }) => {
   const [profile, setProfile] = useState([]);
   useEffect(() => {
-    axios
-      .get('https://questionbox-team-skywalker.herokuapp.com/auth/users/me/', {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `token ${token}`,
-        },
-      })
-      .then((response) => {
-        setProfile(response.data);
-      });
+    
   }, [token]);
-
+  console.log('user questions', user.questions)
   return (
     <>
       <h1>Profile</h1>
-      <p>{profile.username}</p>
+      <p>{user.username}</p>
+      {user[0].questions &&
+          user[0].questions.map((question, index) => (
+            <Question question={question} username={user[0].username}/>
+          ))}
     </>
   );
 };
