@@ -26,21 +26,23 @@ html {
 }
 nav {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
   min-height: 10vh;
   background: rgb(167, 218, 167);
 }
+
 .nav-links {
-  width: 40%;
+  width: 70vw;
   display: flex;
   justify-content: space-around;
+  margin: 10px;
   align-items: center;
   list-style: none;
 }
 
 button {
-  border: 1px solid rgb(24, 129, 84);
+  border: rgba(0, 0, 0, 0);
   border-radius: 4px;
   padding: 4px 12px;
 }
@@ -192,10 +194,12 @@ input[type='text'] {
 
 .logo {
   height: 60px;
+  margin-right: 400px;
 }
 .navButt {
   background-color: rgb(24, 129, 84);
   color: white;
+  margin: 5px;
 }
 .searchBarCont {
   display: flex;
@@ -204,4 +208,8 @@ input[type='text'] {
 }
 .searchBar {
   height: 33px;
+}
+.navButtCont {
+  display: flex;
+  flex-direction: row;
 }
