@@ -118,7 +118,8 @@ input[type='text'] {
   color: darkgreen;
   padding: 10px;
 }
-.questionTitle {
+.questionTitle,
+.profTitle {
   color: darkgreen;
 }
 .questionTitleCont {
@@ -162,7 +163,7 @@ input[type='text'] {
     0 1px 2px 0 rgba(82, 116, 82, 0.5);
 }
 .uk-button:active {
-  border: 1px solid linen;
+  border: 1px solid white;
 }
 .uk-button {
   display: flex;
@@ -177,4 +178,10 @@ input[type='text'] {
 .uk-buttonCont {
   display: flex;
   justify-content: center;
+}
+.profCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
 }
