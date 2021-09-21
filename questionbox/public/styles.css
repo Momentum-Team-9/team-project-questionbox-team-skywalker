@@ -45,15 +45,35 @@ button {
   padding: 4px 12px;
 }
 
-button:hover {
+button:hover,
+.deleteButton:hover {
   box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
     0 1px 2px 0 rgba(82, 116, 82, 0.5);
 }
+
 button:active {
   border: 1px solid rgba(82, 116, 82, 0.5);
   border-radius: 4px;
 }
 
+.deleteButton:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.deleteButton:active {
+  border: 1px solid linen;
+  border-radius: 120%;
+}
+.deleteButton {
+  background-color: rgb(250, 68, 68);
+  color: linen;
+  border-radius: 120%;
+  margin: 5px;
+}
+.deleteDisabled {
+  border-radius: 120%;
+  margin: 5px;
+}
 input[type='password'] {
   width: 100%;
   padding: 12px 20px;
@@ -106,13 +126,31 @@ input[type='text'] {
   background-color: linen;
   height: 100%;
 }
-.questionCardFooter {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .answerLink,
 .askedBy {
   margin: 10px;
+}
+
+.answerView:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.answerView:active {
+  border: 1px solid linen;
+}
+.answerView {
+  background-color: rgb(17, 165, 17);
+  font-size: 20px;
+  color: linen;
+  border-radius: 4px;
+  margin: 5px;
+}
+.answerLink {
+  display: flex;
+  justify-content: center;
+}
+.questionTitle {
+  display: flex;
+  justify-content: center;
 }
