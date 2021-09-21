@@ -4,26 +4,19 @@ import { Link } from 'react-router-dom';
 export function Header({ token, setAuth, clearStorage }) {
   return (
     <nav>
-      <h1>Welcome to GreenThumb</h1>
       <ul className="nav-links">
+        <Link to="/questions">
+          <h3>GreenThumb</h3>
+        </Link>
+
         {token ? (
-        <>
-        <Link to="/questions">
-          <h3>Home</h3>
-        </Link>
-
-        <Link to="/questions">
-          <h3>Questions</h3>
-        </Link>
-
+          <>
             <Link to="/profile">
-              <h3>Profile</h3>
+              <button>Profile</button>
             </Link>
 
             <a href onClick={() => clearStorage('token')}>
-              <Link to="/questions">
-              <p>Logout</p>
-              </Link>
+              <button>Logout</button>
             </a>
           </>
         ) : (
