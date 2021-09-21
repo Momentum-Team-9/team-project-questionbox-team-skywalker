@@ -6,7 +6,6 @@ import { Question } from './Question';
 
 export const QuestionList = ({ token, username }) => {
   const [questions, setQuestions] = useState([]);
-
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -22,6 +21,8 @@ export const QuestionList = ({ token, username }) => {
           }
         )
         .then((res) => setQuestions(res.data));
+          setSubmitted(false)
+
     } else {
       axios
         .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
@@ -32,7 +33,7 @@ export const QuestionList = ({ token, username }) => {
   return (
     <>
       <div className="questions">
-        {token && <QuestionForm token={token} />}
+        {token && <QuestionForm token={token} setSubmitted={setSubmitted} />}
         <div className="questionTitleCont">
           <h1 className="questionTitle">Seeds of Knowledge</h1>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-export const QuestionForm = ({ token }) => {
+export const QuestionForm = ({ token, setSubmitted }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
@@ -21,7 +21,9 @@ export const QuestionForm = ({ token }) => {
           },
         }
       )
-      .then((res) => res);
+      .then((res) => {
+        setSubmitted(true);
+      });
   };
 
   const handleChange = (inputType, event) => {
