@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+// import logo from './greenThumb.png';
 export function Header({ token, setAuth, clearStorage }) {
   return (
     <nav>
       <ul className="nav-links">
         <Link to="/questions">
-          <h3>GreenThumb</h3>
+          <img
+            className="logo"
+            src="/images/greenThumb.png"
+            alt="GreenThumb logo"
+          />
         </Link>
 
         {token ? (
           <>
             <Link to="/profile">
-              <button>Profile</button>
+              <button className="navButt">Profile</button>
             </Link>
 
             <a
@@ -22,17 +26,17 @@ export function Header({ token, setAuth, clearStorage }) {
                 clearStorage('user');
               }}
             >
-              <button>Logout</button>
+              <button className="navButt">Logout</button>
             </a>
           </>
         ) : (
           <>
             <Link to="/register">
-              <button>Register</button>
+              <button className="navButt">Register</button>
             </Link>
 
             <Link to="/login">
-              <button>Login</button>
+              <button className="navButt">Login</button>
             </Link>
           </>
         )}
