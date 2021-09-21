@@ -19,14 +19,10 @@ export const Profile = ({ token, user, }) => {
               <Question question={question} username={user[0].username}/>
             ))}
         <h3>{user[0].username}'s Answers</h3>
-        {/* {user[0].answers &&
-            user[0].answers.map((answer, index) => (
-              <Question answer={answer} username={user[0].username}/>
-            ))} */}
-            
           {user[0].answers.map((answer) => (
             <div className="questionCard">
-              <p>{String(answer.body)}</p>
+              <h4>{String(answer.body)}</h4>
+              <p>submitted by: {answer.owner}</p>
             </div>
           ))}
       </div>

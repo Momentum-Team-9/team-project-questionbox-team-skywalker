@@ -40,8 +40,8 @@ export const QuestionDetail = ({ token, props, pk }) => {
         <h3> Answers </h3>
         {answers.map((answer) => (
           <div className="questionCard">
-            <p>{String(answer.body)}</p>
-            <p>{answer.owner}</p>
+            <h4>{String(answer.body)}</h4>
+            <p>submitted by: {answer.owner}</p>
             
           </div>
         ))}
