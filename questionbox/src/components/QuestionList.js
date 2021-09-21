@@ -7,6 +7,7 @@ import { Question } from './Question';
 export const QuestionList = ({ token, username }) => {
   const [questions, setQuestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     if (token || submitted) {
@@ -29,11 +30,27 @@ export const QuestionList = ({ token, username }) => {
         .then((res) => setQuestions(res.data));
     }
   }, [token, submitted]);
+  const handleSubmit=() => {
+    axios.get(
+      `https://questionbox-team-skywalker.herokuapp.com/api/questions/?search=${search}` 
+
+    )
+    .then((res) => setQuestions(res.data))
+  }
+
 
   return (
     <>
       <div className="questions">
-        {token && <QuestionForm token={token} setSubmitted={setSubmitted} />}
+        <input 
+          type='text'
+          placeholder='search questions by title'
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+        <div className="button">
+          <button className="uk-button" onClick={handleSubmit}>Search</button>
+        </div>
         <div className="questionTitleCont">
           <h1 className="questionTitle">Seeds of Knowledge</h1>
         </div>
@@ -45,9 +62,10 @@ export const QuestionList = ({ token, username }) => {
                 username={username}
                 token={token}
                 setSubmitted={setSubmitted}
-              />
-            );
+            />
+                );
           })}
+          {token && <QuestionForm token={token} setSubmitted={setSubmitted} />}
       </div>
     </>
   );

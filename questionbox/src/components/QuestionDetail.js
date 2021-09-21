@@ -29,6 +29,7 @@ export const QuestionDetail = ({ token, props, pk }) => {
   return (
     <>
     {/* test */}
+      
       <div className="questionDetails">
         <div>
         <AnswerForm token={token} />
