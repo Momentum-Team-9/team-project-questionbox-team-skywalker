@@ -23,8 +23,15 @@ export const Profile = ({ token, user, }) => {
             user[0].answers.map((answer, index) => (
               <Question answer={answer} username={user[0].username}/>
             ))} */}
+            
+          {user[0].answers.map((answer) => (
+            <div className="questionCard">
+              <p>{String(answer.body)}</p>
+            </div>
+          ))}
       </div>
     </div>
     </>
   );
 };
+
