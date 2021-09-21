@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Question } from './Question';
 import axios from 'axios';
 
-export const Profile = ({ token, user, }) => {
+export const Profile = ({ token, user }) => {
   // const [profile, setProfile] = useState([]);
   useEffect(() => {
     
@@ -15,15 +15,21 @@ export const Profile = ({ token, user, }) => {
       <div className ='profileQuestions'>
         <h3>{user[0].username}'s Questions</h3>
         {user[0].questions &&
-            user[0].questions.map((question, index) => (
+            user[0].questions.map((question) => (
               <Question question={question} username={user[0].username}/>
             ))}
         <h3>{user[0].username}'s Answers</h3>
           {user[0].answers.map((answer) => (
             <div className="questionCard">
-              <h4>{String(answer.body)}</h4>
-              <p>submitted by: {answer.owner}</p>
+            <div className="questionCardBody">
+              <div className="questionTitle">
+                <h4>{String(answer.body)}</h4>
+              </div>
+              <div className="askedBy">
+                <p>submitted by: {answer.owner} on {answer.created_at} </p>
+              </div>
             </div>
+          </div>
           ))}
       </div>
     </div>
