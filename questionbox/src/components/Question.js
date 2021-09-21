@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const Question = ({ question, username, token, setSubmitted }) => {
+  const [toggle, setToggle] = useState(false)
   const handleDelete = (event) => {
     const id = event.target.id;
     return axios
@@ -19,6 +20,19 @@ export const Question = ({ question, username, token, setSubmitted }) => {
         setSubmitted(true);
       });
   };
+
+    // const handleFavorite = (e) => {
+    //   const [toggle, setToggle] = useState(false)
+      
+    //   return(
+
+    //   )
+    // }
+
+
+
+
+
   return (
     <div className="questionCard" key={question.pk}>
       <div className="qustionCardBody">
@@ -31,11 +45,21 @@ export const Question = ({ question, username, token, setSubmitted }) => {
             >
               X
             </button>
+            <button className="favoriteDisabled" disabled>
+            Favorite
+            </button>
           </div>
         ) : (
           <div className="deleteContainer">
             <button className="deleteDisabled" disabled>
               X
+            </button>
+            <button 
+            className="FavoriteButton"
+            id={question.pk}
+            onClick={() => setToggle(!toggle)}
+            >
+            Favorite
             </button>
           </div>
         )}
