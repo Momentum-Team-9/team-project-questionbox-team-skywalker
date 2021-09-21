@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [auth, setAuth, { removeItem }] = useLocalStorageState('token', '');
   const [username, setUsername] = useState('');
-  const [user, setUser] = useState({});
+  const [user, setUser] = useLocalStorageState('user',{});
 
   useEffect(() => {
     console.log(auth);
