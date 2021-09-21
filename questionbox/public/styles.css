@@ -65,7 +65,7 @@ button:active {
   border-radius: 120%;
 }
 .deleteButton {
-  background-color: rgb(250, 68, 68);
+  background-color: rgb(184, 39, 39);
   color: linen;
   border-radius: 120%;
   margin: 5px;
@@ -144,7 +144,7 @@ input[type='text'] {
   border: 1px solid linen;
 }
 .answerView {
-  background-color: rgb(22, 61, 216);
+  background-color: rgb(17, 129, 166);
   font-size: 16px;
   color: linen;
   border-radius: 4px;
@@ -168,7 +168,7 @@ input[type='text'] {
 .uk-button {
   display: flex;
   justify-content: center;
-  background-color: rgb(17, 165, 17);
+  background-color: rgb(17, 166, 17);
   font-size: 20px;
   color: white;
   border: 1px solid white;
