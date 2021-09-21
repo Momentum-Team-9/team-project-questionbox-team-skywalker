@@ -15,7 +15,13 @@ export function Header({ token, setAuth, clearStorage }) {
               <button>Profile</button>
             </Link>
 
-            <a href onClick={() => clearStorage('token')}>
+            <a
+              href
+              onClick={() => {
+                clearStorage('token');
+                clearStorage('user');
+              }}
+            >
               <button>Logout</button>
             </a>
           </>
