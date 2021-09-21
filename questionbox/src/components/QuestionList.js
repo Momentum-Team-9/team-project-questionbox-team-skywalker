@@ -33,7 +33,9 @@ export const QuestionList = ({ token, username }) => {
     <>
       <div className="questions">
         {token && <QuestionForm token={token} />}
-        <h1 className="questionTitle">Seeds of Knowledge</h1>
+        <div className="questionTitleCont">
+          <h1 className="questionTitle">Seeds of Knowledge</h1>
+        </div>
         {questions &&
           questions.map((question, index) => {
             return (

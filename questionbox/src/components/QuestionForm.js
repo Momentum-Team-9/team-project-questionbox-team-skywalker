@@ -54,7 +54,9 @@ export const QuestionForm = ({ token }) => {
           value={body}
           onChange={(e) => handleChange('body', e)}
         />
-        <button className="uk-button">Ask a Question</button>
+        <div className="uk-buttonCont">
+          <button className="uk-button">Ask a Question</button>
+        </div>
       </form>
     </div>
   );

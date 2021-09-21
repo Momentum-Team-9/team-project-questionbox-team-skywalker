@@ -121,6 +121,9 @@ input[type='text'] {
 .questionTitle {
   color: darkgreen;
 }
+.questionTitleCont {
+  padding: 20px;
+}
 .questionDetails {
   padding: 1em;
   background-color: linen;
@@ -140,8 +143,8 @@ input[type='text'] {
   border: 1px solid linen;
 }
 .answerView {
-  background-color: rgb(17, 165, 17);
-  font-size: 20px;
+  background-color: rgb(22, 61, 216);
+  font-size: 16px;
   color: linen;
   border-radius: 4px;
   margin: 5px;
@@ -151,6 +154,27 @@ input[type='text'] {
   justify-content: center;
 }
 .questionTitle {
+  display: flex;
+  justify-content: center;
+}
+.uk-button:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.uk-button:active {
+  border: 1px solid linen;
+}
+.uk-button {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(17, 165, 17);
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin: 5px;
+}
+.uk-buttonCont {
   display: flex;
   justify-content: center;
 }
