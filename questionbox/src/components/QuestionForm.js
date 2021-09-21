@@ -36,11 +36,10 @@ export const QuestionForm = ({ token, setSubmitted }) => {
   };
 
   return (
-    <div className="uk-container uk-flex uk-flex-center uk-flex-middle uk-height-large">
-      <form className="uk-form-horizontal" onSubmit={handleSubmit}>
+    <div className="questionFormContainer">
+      <form className="questionForm" onSubmit={handleSubmit}>
         <label className="uk-form-label">Title</label>
         <input
-          className="uk-input"
           type="text"
           placeholder="Enter Question Here"
           value={title}
@@ -48,7 +47,6 @@ export const QuestionForm = ({ token, setSubmitted }) => {
         />
         <label className="uk-form-label">Body</label>
         <input
-          className="uk-input"
           placeholder="Add More Detail (Optional)"
           type="text"
           // using state to pass a value to this attribute
@@ -56,7 +54,7 @@ export const QuestionForm = ({ token, setSubmitted }) => {
           value={body}
           onChange={(e) => handleChange('body', e)}
         />
-        <div className="uk-buttonCont">
+        <div className="button">
           <button className="uk-button">Ask a Question</button>
         </div>
       </form>
