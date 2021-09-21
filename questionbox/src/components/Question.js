@@ -7,7 +7,7 @@ export const Question = ({ question, username, token, setSubmitted }) => {
     const id = event.target.id;
     return axios
       .delete(
-        `https://questionbox-team-skywalker.herokuapp.com/api/questions/${question.pk}`,
+        `https://questionbox-team-skywalker.herokuapp.com/api/questions/${id}`,
         {
           headers: {
             'Content-Type': 'application/json',

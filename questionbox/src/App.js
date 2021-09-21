@@ -30,6 +30,7 @@ function App() {
         setUser(response.data);
         setUsername(response.data[0].username);
       });
+      console.log(user);
     }
   }, [auth]);
 
