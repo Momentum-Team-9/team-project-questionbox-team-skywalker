@@ -24,6 +24,7 @@ export const AnswerForm = ({ token }) => {
         }
       )
       .then((res) => {
+        setBody('');
         history.push(`/question/${pk}/`);
       });
   };
