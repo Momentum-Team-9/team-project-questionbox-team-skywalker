@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Question } from './Question';
 
 export const Profile = ({ token, user }) => {
-  const [submitted, setSubmitted] = useState(false);
+  const [setSubmitted] = useState(false);
   useEffect(() => {}, [token]);
   console.log('user questions', user[0]);
   return (

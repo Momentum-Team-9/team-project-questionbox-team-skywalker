@@ -5,10 +5,11 @@ import { AnswerForm } from './AnswerForm';
 export const QuestionDetail = ({ token, props, pk }) => {
   const [question, setQuestion] = useState({});
   const [answers, setAnswers] = useState([]);
-
+  // const isAccepted = useState(false)
+  // const [accepted, setAccepted] = useState(false)
   useEffect(() => {
     async function getQuestion() {
-      const response = await axios
+      await axios
         .get(
           'https://questionbox-team-skywalker.herokuapp.com/api/questions/' +
             props.match.params.pk,
@@ -29,8 +30,6 @@ export const QuestionDetail = ({ token, props, pk }) => {
 
   return (
     <>
-      {/* test */}
-
       <div className="questionDetails">
         <div className="questionCardCont">
           <div className="questionCard">
@@ -47,6 +46,25 @@ export const QuestionDetail = ({ token, props, pk }) => {
           </div>
           {answers.map((answer) => (
             <div className="questionCard">
+          {/*           
+          {isAccepted ? (
+            <button 
+            className="AcceptButton"
+            id={answer.pk}
+            onClick={() => setAccepted({ accepted: !accepted})}
+            >
+            UnAccept
+            </button>
+          ) : (
+            <button 
+            className="FavoriteButton"
+            id={question.pk}
+            onClick={() => setAccepted({ accepted: !accepted})}
+            >
+            Accept
+            </button>
+          )} */}
+
               <div className="questionCardBody">
                 <div className="answerText">{String(answer.body)}</div>
 
