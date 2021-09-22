@@ -28,9 +28,8 @@ export const Profile = ({ token, user }) => {
           {user[0].answers.map((answer) => (
             <div className="questionCard">
               <div className="questionCardBody">
-                <div className="questionTitle">
-                  <div className="answerText">{String(answer.body)}</div>
-                </div>
+                <div className="answerText">{String(answer.body)}</div>
+
                 <div className="askedBy">
                   <p>original question: {answer.question}</p>
                 </div>
