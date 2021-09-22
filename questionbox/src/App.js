@@ -1,5 +1,4 @@
 import { QuestionList } from './components/QuestionList.js';
-import { Question } from './components/Question.js';
 import { Login } from './components/Login.js';
 import { Registration } from './components/Registration';
 import { Header } from './components/Header.js';

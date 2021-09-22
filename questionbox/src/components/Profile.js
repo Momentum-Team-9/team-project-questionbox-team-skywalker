@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Question } from './Question';
-import axios from 'axios';
 
 export const Profile = ({ token, user }) => {
   // const [profile, setProfile] = useState([]);
