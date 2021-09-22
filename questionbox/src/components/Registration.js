@@ -106,7 +106,9 @@ export const Registration = ({ setAuth }) => {
           onChange={(e) => handleChange('re_password', e)}
         />
         <div id="form-buttons">
-          <button type="submit">Sign Up</button>
+          <button className="form-buttons" type="submit">
+            Sign Up
+          </button>
         </div>
       </form>
     </div>
