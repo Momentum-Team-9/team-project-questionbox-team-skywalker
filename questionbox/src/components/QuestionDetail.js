@@ -41,7 +41,9 @@ export const QuestionDetail = ({ token, props, pk }) => {
               </p>
             </div>
           </div>
-          <h3> Answers </h3>
+          <div className="profSubTitleCont">
+            <h3> Answers </h3>
+          </div>
           {answers.map((answer) => (
             <div className="questionCard">
           {/*           
@@ -64,9 +66,8 @@ export const QuestionDetail = ({ token, props, pk }) => {
           )} */}
 
               <div className="questionCardBody">
-                <div className="questionTitle">
-                  <div className="answerText">{String(answer.body)}</div>
-                </div>
+                <div className="answerText">{String(answer.body)}</div>
+
                 <div className="askedBy">
                   <p>
                     submitted by: {answer.owner} on {answer.created_at}{' '}

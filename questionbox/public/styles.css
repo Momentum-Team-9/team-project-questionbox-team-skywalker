@@ -8,7 +8,7 @@ html {
   background-color: linen;
 }
 .formContainer {
-  width: 60vw;
+  width: 35vw;
   padding-top: 100px;
 }
 .regContainer {
@@ -97,12 +97,13 @@ button:active {
 }
 
 input[type="password"] {
+
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
-input[type="text"] {
+input[type='text'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -159,12 +160,6 @@ input[type="text"] {
   margin: 10px;
   font-size: 14px;
   color: rgb(30, 31, 30);
-  font-family: sans-serif;
-}
-.answerText {
-  font-size: 18px;
-  margin: 10px;
-  color: darkgreen;
   font-family: sans-serif;
 }
 
@@ -225,7 +220,8 @@ input[type="text"] {
   height: 60px;
   margin-right: 400px;
 }
-.navButt {
+.navButt,
+.form-buttons {
   background-color: rgb(24, 129, 84);
   color: white;
   margin: 5px;
@@ -258,4 +254,16 @@ input[type="text"] {
 
   color: rgb(30, 31, 30);
   font-family: sans-serif;
+}
+.answerText {
+  font-size: 18px;
+  margin: 10px;
+  color: rgb(30, 31, 30);
+  font-family: sans-serif;
+}
+
+.profSubTitleCont {
+  color: darkgreen;
+  margin-left: 15px;
+  width: 70vw;
 }

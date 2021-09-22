@@ -10,7 +10,9 @@ export const Profile = ({ token, user }) => {
       <div className="profCont">
         <h1 className="profTitle">{user[0].username}'s Profile</h1>
         <div className="profileQuestions">
-          <h3>{user[0].username}'s Questions</h3>
+          <div className="profSubTitleCont">
+            <h3 className="profSubTitle">{user[0].username}'s Questions</h3>
+          </div>
           {user[0].questions &&
             user[0].questions.map((question) => (
               <Question
@@ -20,13 +22,14 @@ export const Profile = ({ token, user }) => {
                 setSubmitted={setSubmitted}
               />
             ))}
-          <h3>{user[0].username}'s Answers</h3>
+          <div className="profSubTitleCont">
+            <h3 className="profSubTitle">{user[0].username}'s Answers</h3>
+          </div>
           {user[0].answers.map((answer) => (
             <div className="questionCard">
               <div className="questionCardBody">
-                <div className="questionTitle">
-                  <div className="answerText">{String(answer.body)}</div>
-                </div>
+                <div className="answerText">{String(answer.body)}</div>
+
                 <div className="askedBy">
                   <p>original question: {answer.question}</p>
                 </div>
