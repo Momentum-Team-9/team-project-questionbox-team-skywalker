@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Question } from './Question';
 
 export const Profile = ({ token, user }) => {
@@ -28,9 +28,7 @@ export const Profile = ({ token, user }) => {
                   <div className="answerText">{String(answer.body)}</div>
                 </div>
                 <div className="askedBy">
-                  <p>
-                    original question: {answer.question} 
-                  </p>
+                  <p>original question: {answer.question}</p>
                 </div>
               </div>
             </div>
