@@ -41,8 +41,8 @@ export const Question = ({ question, username, token, setSubmitted }) => {
             <button
               className="deleteButton"
               id={question.pk}
-              onClick={(e) => handleDelete(e)}
-            >
+              onClick={(e) => { if (window.confirm('Are you sure you want to delete this question?')) handleDelete(e)}}
+              >
               X
             </button>
             <button className="favoriteDisabled" disabled>
