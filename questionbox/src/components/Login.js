@@ -39,9 +39,7 @@ export const Login = ({ setAuth }) => {
 
   return (
     <div className="loginContainer">
-      <div className="titleContainer">
-        <p className="title">Login</p>
-      </div>
+      <div className="titleContainer"></div>
 
       {errors && <p>{errors}</p>}
       <form className="form" onSubmit={handleSubmit}>
@@ -62,7 +60,9 @@ export const Login = ({ setAuth }) => {
           onChange={(e) => handleChange('password', e)}
         />
         <div id="form-buttons">
-          <button type="submit">Login</button>
+          <button className="form-buttons" type="submit">
+            Login
+          </button>
         </div>
       </form>
     </div>

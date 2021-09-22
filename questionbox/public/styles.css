@@ -204,6 +204,11 @@ input[type='text'] {
   color: white;
   margin: 5px;
 }
+.form-buttons {
+  background-color: rgb(24, 129, 84);
+  color: white;
+  margin: 5px;
+}
 .searchBarCont {
   display: flex;
   align-items: center;
