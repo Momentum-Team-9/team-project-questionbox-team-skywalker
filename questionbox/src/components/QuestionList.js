@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { QuestionForm } from './QuestionForm';
 import { Question } from './Question';
+import _ from 'lodash';
 
 export const QuestionList = ({ token, username }) => {
   const [questions, setQuestions] = useState([]);
@@ -33,7 +34,7 @@ export const QuestionList = ({ token, username }) => {
       .get(
         `https://questionbox-team-skywalker.herokuapp.com/api/questions/?search=${search}`
       )
-      .then((res) => setQuestions(res.data));
+      .then((res) => { setQuestions(res.data); setSearch('')});
   };
 
   return (
@@ -58,8 +59,8 @@ export const QuestionList = ({ token, username }) => {
           </div>
         </div>
 
-        {questions &&
-          questions.map((question, index) => {
+        {questions && !_.isEmpty(questions)
+          ? questions.map((question, index) => {
             return (
               <Question
                 question={question}
@@ -68,7 +69,12 @@ export const QuestionList = ({ token, username }) => {
                 setSubmitted={setSubmitted}
               />
             );
-          })}
+          })
+          : <div>
+              <h4>
+                No results found for that search
+              </h4>
+            </div>}
         {token && <QuestionForm token={token} setSubmitted={setSubmitted} />}
       </div>
     </>
