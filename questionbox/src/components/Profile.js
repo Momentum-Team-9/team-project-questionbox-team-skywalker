@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Question } from './Question';
 
 export const Profile = ({ token, user }) => {
-  // const [profile, setProfile] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
   useEffect(() => {}, [token]);
   console.log('user questions', user[0]);
   return (
@@ -13,7 +13,12 @@ export const Profile = ({ token, user }) => {
           <h3>{user[0].username}'s Questions</h3>
           {user[0].questions &&
             user[0].questions.map((question) => (
-              <Question question={question} username={user[0].username} />
+              <Question
+                question={question}
+                username={user[0].username}
+                token={token}
+                setSubmitted={setSubmitted}
+              />
             ))}
           <h3>{user[0].username}'s Answers</h3>
           {user[0].answers.map((answer) => (
