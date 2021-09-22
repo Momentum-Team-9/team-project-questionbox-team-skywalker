@@ -8,7 +8,7 @@ html {
   background-color: linen;
 }
 .formContainer {
-  width: 60vw;
+  width: 35vw;
   padding-top: 100px;
 }
 .regContainer {
@@ -199,11 +199,7 @@ input[type='text'] {
   height: 60px;
   margin-right: 400px;
 }
-.navButt {
-  background-color: rgb(24, 129, 84);
-  color: white;
-  margin: 5px;
-}
+.navButt,
 .form-buttons {
   background-color: rgb(24, 129, 84);
   color: white;
