@@ -34,7 +34,7 @@ export const QuestionList = ({ token, username }) => {
       .get(
         `https://questionbox-team-skywalker.herokuapp.com/api/questions/?search=${search}`
       )
-      .then((res) => setQuestions(res.data));
+      .then((res) => { setQuestions(res.data); setSearch('')});
   };
 
   return (
