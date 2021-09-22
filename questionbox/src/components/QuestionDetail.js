@@ -5,7 +5,8 @@ import { AnswerForm } from './AnswerForm';
 export const QuestionDetail = ({ token, props, pk }) => {
   const [question, setQuestion] = useState({});
   const [answers, setAnswers] = useState([]);
-
+  const isAccepted = useState(false)
+  const [accepted, setAccepted] = useState(false)
   useEffect(() => {
     async function getQuestion() {
       const response = await axios
@@ -45,6 +46,25 @@ export const QuestionDetail = ({ token, props, pk }) => {
           <h3> Answers </h3>
           {answers.map((answer) => (
             <div className="questionCard">
+          
+          {isAccepted ? (
+            <button 
+            className="AcceptButton"
+            id={answer.pk}
+            onClick={() => setAccepted({ accepted: !accepted})}
+            >
+            UnAccept
+            </button>
+          ) : (
+            <button 
+            className="FavoriteButton"
+            id={question.pk}
+            onClick={() => setAccepted({ accepted: !accepted})}
+            >
+            Accept
+            </button>
+          )}
+
               <div className="questionCardBody">
                 <div className="questionTitle">
                   <div className="answerText">{String(answer.body)}</div>

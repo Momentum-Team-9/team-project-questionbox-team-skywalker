@@ -3,7 +3,8 @@ import { useState } from 'react';
 import axios from 'axios';
 
 export const Question = ({ question, username, token, setSubmitted }) => {
-  const [toggle, setToggle] = useState(false)
+  const isFavorite = useState(false)
+  // const [toggle, toggleFavorite] = useState(false)
   const handleDelete = (event) => {
     const id = event.target.id;
     return axios
@@ -21,14 +22,29 @@ export const Question = ({ question, username, token, setSubmitted }) => {
       });
   };
 
-    // const handleFavorite = (e) => {
-    //   const [toggle, setToggle] = useState(false)
-      
-    //   return(
-
-    //   )
-    // }
-
+    const toggleFavorite = (e) => {
+      const id = e.target.id;
+      console.log(id)
+      console.log(token)
+      const user = {username};
+      console.log(user)
+      axios
+        .patch(`https://questionbox-team-skywalker.herokuapp.com/api/questions/${id}/`,
+        {
+          favorited_by: user
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `token ${token}`,
+          }
+          }
+          
+      )
+        .then((res) => {
+          setSubmitted(true);
+    })
+  }
 
 
 
@@ -54,13 +70,23 @@ export const Question = ({ question, username, token, setSubmitted }) => {
             <button className="deleteDisabled" disabled>
               X
             </button>
+            {isFavorite ? (
             <button 
             className="FavoriteButton"
             id={question.pk}
-            onClick={() => setToggle(!toggle)}
+            onClick={(e) => toggleFavorite(e)}
+            >
+            UnFavorite
+            </button>
+          ) : (
+            <button 
+            className="FavoriteButton"
+            id={question.pk}
+            onClick={() => toggleFavorite(question)}
             >
             Favorite
             </button>
+          )}
           </div>
         )}
         <div className="questionTitle">
