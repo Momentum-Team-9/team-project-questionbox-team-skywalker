@@ -24,7 +24,7 @@ export const Profile = ({ token, user }) => {
                 </div>
                 <div className="askedBy">
                   <p>
-                    submitted by: {answer.owner} on {answer.created_at}{' '}
+                    original question: {answer.question} 
                   </p>
                 </div>
               </div>
