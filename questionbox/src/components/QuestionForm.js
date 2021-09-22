@@ -23,6 +23,8 @@ export const QuestionForm = ({ token, setSubmitted }) => {
       )
       .then((res) => {
         setSubmitted(true);
+        setTitle('');
+        setBody('');
       });
   };
 
