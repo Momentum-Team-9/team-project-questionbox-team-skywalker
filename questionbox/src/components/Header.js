@@ -1,39 +1,53 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+// import logo from './greenThumb.png';
 export function Header({ token, setAuth, clearStorage }) {
   return (
-    <nav>
+    <nav className="navCont">
       <ul className="nav-links">
         <Link to="/questions">
-          <h3>GreenThumb</h3>
+          <img
+            className="logo"
+            src="/images/greenThumb.png"
+            alt="GreenThumb logo"
+          />
         </Link>
 
         {token ? (
           <>
-            <Link to="/profile">
-              <button>Profile</button>
-            </Link>
-
-            <a
-              href
-              onClick={() => {
-                clearStorage('token');
-                clearStorage('user');
-              }}
-            >
-              <button>Logout</button>
-            </a>
+            <div className="navButtCont">
+              <div className="nav1">
+                <Link to="/profile">
+                  <button className="navButt">Profile</button>
+                </Link>
+              </div>
+              <div className="nav2">
+                <a
+                  href
+                  onClick={() => {
+                    clearStorage('token');
+                    clearStorage('user');
+                  }}
+                >
+                  <button className="navButt">Logout</button>
+                </a>
+              </div>
+            </div>
           </>
         ) : (
           <>
-            <Link to="/register">
-              <button>Register</button>
-            </Link>
-
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
+            <div className="navButtCont">
+              <div className="nav1">
+                <Link to="/register">
+                  <button className="navButt">Register</button>
+                </Link>
+              </div>
+              <div className="nav2">
+                <Link to="/login">
+                  <button className="navButt">Login</button>
+                </Link>
+              </div>
+            </div>
           </>
         )}
       </ul>

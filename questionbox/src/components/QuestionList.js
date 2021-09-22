@@ -22,38 +22,43 @@ export const QuestionList = ({ token, username }) => {
           }
         )
         .then((res) => setQuestions(res.data));
-          setSubmitted(false)
-
+      setSubmitted(false);
     } else {
       axios
         .get(`https://questionbox-team-skywalker.herokuapp.com/api/questions/`)
         .then((res) => setQuestions(res.data));
     }
   }, [token, submitted]);
-  const handleSubmit=() => {
-    axios.get(
-      `https://questionbox-team-skywalker.herokuapp.com/api/questions/?search=${search}` 
-
-    )
-    .then((res) => setQuestions(res.data))
-  }
-
+  const handleSubmit = () => {
+    axios
+      .get(
+        `https://questionbox-team-skywalker.herokuapp.com/api/questions/?search=${search}`
+      )
+      .then((res) => setQuestions(res.data));
+  };
 
   return (
     <>
       <div className="questions">
-        <input 
-          type='text'
-          placeholder='search questions by title'
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-        <div className="button">
-          <button className="uk-button" onClick={handleSubmit}>Search</button>
-        </div>
         <div className="questionTitleCont">
           <h1 className="questionTitle">Seeds of Knowledge</h1>
         </div>
+        <div className="searchBarCont">
+          <input
+            className="searchBar"
+            type="text"
+            placeholder="search questions by title"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+
+          <div className="button">
+            <button className="uk-button" onClick={handleSubmit}>
+              Search
+            </button>
+          </div>
+        </div>
+
         {questions &&
           questions.map((question, index) => {
             return (
@@ -62,10 +67,10 @@ export const QuestionList = ({ token, username }) => {
                 username={username}
                 token={token}
                 setSubmitted={setSubmitted}
-            />
-                );
+              />
+            );
           })}
-          {token && <QuestionForm token={token} setSubmitted={setSubmitted} />}
+        {token && <QuestionForm token={token} setSubmitted={setSubmitted} />}
       </div>
     </>
   );
