@@ -40,6 +40,7 @@ export const QuestionForm = ({ token, setSubmitted }) => {
       <form className="questionForm" onSubmit={handleSubmit}>
         <label className="uk-form-label">Title</label>
         <input
+          class="search"
           type="text"
           placeholder="Enter Question Here"
           value={title}
