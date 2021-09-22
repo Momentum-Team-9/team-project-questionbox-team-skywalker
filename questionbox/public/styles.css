@@ -76,13 +76,13 @@ button:active {
   border-radius: 120%;
   margin: 5px;
 }
-input[type="password"] {
+input[type='password'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
-input[type="text"] {
+input[type='text'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -144,7 +144,7 @@ input[type="text"] {
 .answerText {
   font-size: 18px;
   margin: 10px;
-  color: darkgreen;
+  color: rgb(30, 31, 30);
   font-family: sans-serif;
 }
 
@@ -238,4 +238,11 @@ input[type="text"] {
 
   color: rgb(30, 31, 30);
   font-family: sans-serif;
+}
+.profSubTitle {
+  color: darkgreen;
+}
+.profSubTitleCont {
+  margin-left: 15px;
+  width: 70vw;
 }
