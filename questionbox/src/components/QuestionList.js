@@ -40,6 +40,9 @@ export const QuestionList = ({ token, username }) => {
   return (
     <>
       <div className="questions">
+        <div className="questionTitleCont">
+          <h1 className="questionTitle">Seeds of Knowledge</h1>
+        </div>
         <div className="searchBarCont">
           <input
             className="searchBar"
@@ -55,9 +58,7 @@ export const QuestionList = ({ token, username }) => {
             </button>
           </div>
         </div>
-        <div className="questionTitleCont">
-          <h1 className="questionTitle">Seeds of Knowledge</h1>
-        </div>
+
         {questions &&
           questions.map((question, index) => {
             return (
