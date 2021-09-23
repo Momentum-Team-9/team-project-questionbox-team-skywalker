@@ -31,7 +31,7 @@ function App() {
         });
       console.log(user);
     }
-  }, [auth]);
+  }, [auth],);
 
   return (
     <Router>
