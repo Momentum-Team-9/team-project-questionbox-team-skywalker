@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import logo from './greenThumb.png';
-export function Header({ token, setAuth, clearStorage }) {
+export function Header({ token, clearStorage }) {
   return (
     <nav className="navCont">
       <ul className="nav-links">

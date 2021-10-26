@@ -46,7 +46,7 @@ export const QuestionDetail = ({ token, props, pk }) => {
           </div>
           {answers.map((answer) => (
             <div className="questionCard">
-          {/*           
+              {/*           
           {isAccepted ? (
             <button 
             className="AcceptButton"
