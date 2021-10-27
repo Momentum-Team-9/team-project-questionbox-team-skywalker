@@ -1,0 +1,269 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  background-color: linen;
+}
+.formContainer {
+  width: 35vw;
+  padding-top: 100px;
+}
+.regContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 100px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10vh;
+  background: rgb(167, 218, 167);
+}
+
+.nav-links {
+  width: 85vw;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  align-items: center;
+  list-style: none;
+}
+
+button {
+  border: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  padding: 4px 12px;
+}
+
+button:hover,
+.deleteButton:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+
+button:active {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.deleteButton:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.deleteButton:active {
+  border: 1px solid linen;
+  border-radius: 120%;
+}
+.deleteButton {
+  background-color: rgb(184, 39, 39);
+  color: linen;
+  border-radius: 120%;
+  margin: 5px;
+}
+.deleteDisabled {
+  border-radius: 120%;
+  margin: 5px;
+}
+
+.favoriteButton:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.favoriteButton:active {
+  border: 1px solid linen;
+  border-radius: 120%;
+}
+.favoriteButton {
+  background-color: green;
+  color: linen;
+  border-radius: 50%;
+  margin: 5px;
+}
+.favoriteDisabled {
+  border-radius: 50%;
+  margin: 5px;
+}
+
+input[type="password"] {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type='text'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#form-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;c
+}
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  background-color: linen;
+}
+.questions h1 {
+  text-align: center;
+}
+
+.questionCard {
+  margin: 10px;
+  border-style: outset;
+  background-color: white;
+  width: 70vw;
+}
+
+.questionCard h2 {
+  color: darkgreen;
+  padding: 10px;
+  text-align: center;
+}
+.questionTitle,
+.profTitle {
+  color: darkgreen;
+}
+.questionTitleCont {
+  padding: 20px;
+}
+.questionDetails {
+  padding: 1em;
+  background-color: linen;
+  height: 100%;
+}
+
+.answerLink,
+.askedBy {
+  margin: 10px;
+  font-size: 14px;
+  color: rgb(30, 31, 30);
+  font-family: sans-serif;
+}
+
+.answerView:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.answerView:active {
+  border: 1px solid linen;
+}
+.answerView {
+  background-color: rgb(17, 129, 166);
+  font-size: 16px;
+  color: linen;
+  border-radius: 4px;
+  margin: 5px;
+}
+.answerLink {
+  display: flex;
+  justify-content: center;
+}
+.questionTitle {
+  display: flex;
+  justify-content: center;
+}
+.uk-button:hover {
+  box-shadow: 0 1px 2px 0 rgba(82, 116, 82, 0.5),
+    0 1px 2px 0 rgba(82, 116, 82, 0.5);
+}
+.uk-button:active {
+  border: 1px solid white;
+}
+.uk-button {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(24, 129, 84);
+  font-size: 20px;
+  color: white;
+  border-radius: 4px;
+  margin: 5px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+}
+.uk-buttonCont {
+  display: flex;
+  justify-content: center;
+}
+.profCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.logo {
+  height: 60px;
+  margin-right: 400px;
+}
+.navButt,
+.form-buttons {
+  background-color: rgb(24, 129, 84);
+  color: white;
+  margin: 5px;
+}
+.searchBarCont {
+  display: flex;
+  align-items: center;
+  width: 40vw;
+}
+.searchBar {
+  height: 33px;
+}
+.navButtCont {
+  display: flex;
+  flex-direction: row;
+}
+.answerForm {
+  width: 50vw;
+  margin-top: 20px;
+}
+.questionCardCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+.questionBody {
+  margin: 10px;
+  font-size: 18px;
+
+  color: rgb(30, 31, 30);
+  font-family: sans-serif;
+}
+.answerText {
+  font-size: 18px;
+  margin: 10px;
+  color: rgb(30, 31, 30);
+  font-family: sans-serif;
+}
+
+.profSubTitleCont {
+  color: darkgreen;
+  margin-left: 15px;
+  width: 70vw;
+}
